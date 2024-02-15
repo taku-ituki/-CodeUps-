@@ -40,7 +40,7 @@ jQuery(function ($) {
   //  メインビューのswiper
   let swipeOption = {
     loop: true, // スライダーをループさせる設定
-    effect: "slide", // フェードさせる為の設定
+    effect: "fade", // フェードさせる為の設定
     fadeEffect: {
       crossFade: true, //縦横比が統一されない画像の場合、重なる場合がある為、それを防ぐ設定
     },
