@@ -243,3 +243,41 @@ jQuery(function ($) {
     });
   });
 });
+
+
+const drawer = document.querySelector('.js-drawer');
+const overlay = document.querySelector('.header__overlay');
+
+// ドロワーメニューを開く
+function openDrawer() {
+  drawer.classList.add('is-open');
+  overlay.style.display = 'block';
+  document.body.style.overflow = 'hidden'; // ドロワーが開いている間は本体のスクロールを無効にする
+}
+
+// ドロワーメニューを閉じる
+function closeDrawer() {
+  drawer.classList.remove('is-open');
+  overlay.style.display = 'none';
+  document.body.style.overflow = ''; // ドロワーが閉じられたら本体のスクロールを有効にする
+}
+
+// ドロワーメニューを開閉するためのイベントリスナー
+document.querySelector('.js-hamburger').addEventListener('click', () => {
+  if (drawer.classList.contains('is-open')) {
+    closeDrawer();
+  } else {
+    openDrawer();
+  }
+});
+
+// オーバーレイをクリックしてドロワーを閉じる
+overlay.addEventListener('click', closeDrawer);
+
+// ドロワーメニュー内のスクロールを制御する
+drawer.addEventListener('scroll', (event) => {
+  // ドロワーが開いている場合のみ、ドロワーメニュー内でのスクロールを有効にする
+  if (!drawer.classList.contains('is-open')) {
+    event.preventDefault();
+  }
+});
