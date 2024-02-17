@@ -33,6 +33,10 @@
   transition: 0.3s;
 }
 
+.header.is-open{
+  background-color: $green;
+}
+
 .header.is-open .header__overlay {
   display: block; /* ドロワーメニューが開いているときに表示する */
   background-color: $green;

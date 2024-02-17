@@ -245,8 +245,9 @@ jQuery(function ($) {
 });
 
 
+// ドロワー展開時に、下の要素がスクロールするのを防ぐ
 const drawer = document.querySelector('.js-drawer');
-const overlay = document.querySelector('.header__overlay');
+const overlay = document.querySelector('.js-header__overlay');
 
 // ドロワーメニューを開く
 function openDrawer() {
